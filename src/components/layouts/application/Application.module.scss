@@ -1,3 +1,12 @@
 .application-layout {
-  @apply bg-pink-100 h-full w-full;
+  @apply h-full w-full flex flex-col;
+
+  main {
+    @apply flex-1 overflow-hidden overflow-y-scroll;
+    @apply flex flex-row w-full bg-pink-100;
+
+    .application-content {
+      @apply flex-1;
+    }
+  }
 }
