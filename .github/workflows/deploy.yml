@@ -34,10 +34,12 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Install yarn
         run: npm install -g yarn
+      - name: Install typescript
+        run: npm install -g typescript
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build react application
-        run: ${{ steps.detect-package-manager.outputs.runner }} typescript build build
+        run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
