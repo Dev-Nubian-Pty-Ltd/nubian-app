@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "lint": "eslint src --color",
+    "prettier": "prettier src -check",
     "prepare": "husky install",
     "preview": "vite preview",
     "pre-commit": "lint-staged",
@@ -72,5 +74,9 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "_moduleAliases": {
+    "@root": "./src",
+    "@components": "./src/components"
   }
 }
