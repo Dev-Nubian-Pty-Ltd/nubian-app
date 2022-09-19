@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": false,
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "baseUrl": "./src",
+    "incremental": true,
+    "paths": {
+      "@root/*": ["./src/*"],
+      "@components/*": ["./src/components/*"]
+    }
+  },
+  "include": ["scr", "**/*.ts", "**/*.tsx", "postcss.config.cjs"],
+  "exclude": ["node_modules", "**/*.test.ts", "./dist"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
