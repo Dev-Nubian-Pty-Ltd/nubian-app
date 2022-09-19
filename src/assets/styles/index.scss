@@ -16,3 +16,7 @@ body,
   -webkit-text-size-adjust: 100%;
   @apply h-[100vh] bg-base-primary text-secondary-text leading-6 font-normal font-avenir text-base;
 }
+
+.session-manager {
+  @apply h-full w-full;
+}

@@ -7,7 +7,7 @@ interface SessionProps {
 }
 export const SessionManager: React.FC<SessionProps> = ({ authenticated }) => {
   return (
-    <div>
+    <div className="session-manager">
       {authenticated && <ApplicationLayout />}
       {!authenticated && <BaseLayout />}
     </div>
