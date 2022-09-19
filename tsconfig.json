@@ -16,13 +16,13 @@
     "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "incremental": true,
     "types": ["@types/jest", "jest", "node", "reflect-metadata"],
     "paths": {
-      "@root/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@root/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
   "include": ["src/**/*", "**/*.ts", "**/*.tsx", "postcss.config.js", "**/*.test.ts", "jest.config.ts"],

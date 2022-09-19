@@ -4,8 +4,6 @@ import path from 'path';
 import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 
-const pathSrc = path.resolve(__dirname, './src');
-
 export default defineConfig({
 	server: {
 		port: 3000,
