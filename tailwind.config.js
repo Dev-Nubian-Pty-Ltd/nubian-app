@@ -7,9 +7,9 @@ module.exports = {
 				width: ['responsive', 'hover', 'focus'],
 			},
 			fontFamily: {
-				sans: ['Rubik'],
-				rubik: ['Rubik'],
-				apercu: ['Apercu'],
+				helvetica: ['Helvetica'],
+				avenir: ['Avenir'],
+				inter: ['Inter'],
 			},
 			fontWeight: {
 				book: 300,
@@ -26,7 +26,7 @@ module.exports = {
 					light: '#D9EDDF',
 					light: '#EEFDF4',
 				},
-				base: {
+				"base-primary": {
 					DEFAULT: 'rgb(247 248 252)',
 					dark: '#090e24',
 					light: 'rgba(232,235,255,1)',
