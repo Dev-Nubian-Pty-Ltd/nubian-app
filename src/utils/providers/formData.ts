@@ -67,7 +67,12 @@ formStructure.set('CHANNEL', [
 ]);
 
 export const getFormStructure = (formString: string) => {
+	if (!formString) return undefined;
 	if (formString == 'login') return formStructure.get(formType.SIGN_IN);
 	if (formString == 'register') return formStructure.get(formType.SIGN_UP);
-	if (formString == 'channel') return formStructure.get(formType.CHANNEL);
+	if (formString == 'channel') {
+		return formStructure.get(formType.CHANNEL);
+	} else {
+		return undefined;
+	}
 };
