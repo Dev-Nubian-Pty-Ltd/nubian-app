@@ -1,0 +1,26 @@
+.tabs {
+  @apply flex flex-row h-[40px] leading-10 text-sm;
+  box-shadow: rgba(92, 102, 111, 0.2) 0 2px 0 0;
+
+  .tab {
+    @apply flex-1 uppercase text-center font-normal;
+    @apply hover:cursor-pointer;
+    @apply px-4 transition-all ease-linear duration-300;
+
+    &.current {
+      @apply font-medium;
+      box-shadow: #7b68ee 0px 2px 0px 0px;
+    }
+  }
+}
+.tab-content-wrapper {
+  @apply relative my-4 w-full block h-auto;
+
+  .tab-content {
+    @apply transition-all ease-linear duration-100 absolute invisible w-full h-auto;
+    @apply top-0;
+    &.current {
+      @apply visible;
+    }
+  }
+}

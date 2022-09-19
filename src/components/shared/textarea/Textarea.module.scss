@@ -1,0 +1,7 @@
+.message-input-group {
+  @apply min-h-[32px] w-full rounded-lg flex flex-row justify-center overflow-hidden;
+  textarea {
+    @apply transition-all duration-100 ease-linear;
+    @apply min-h-[32px] block flex-1 m-1 p-2 resize-none bg-base rounded-lg;
+  }
+}

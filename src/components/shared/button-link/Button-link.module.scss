@@ -1,0 +1,22 @@
+.button-link {
+  @apply transition-all uppercase ease-in-out duration-300 rounded-sm overflow-hidden;
+  @apply appearance-none relative inline-flex items-center text-center justify-center;
+  @apply align-middle select-none self-center text-sm rounded-md leading-10;
+  @apply px-5 w-auto h-10 text-base-border bg-base font-medium;
+  @apply border-2 border-dashed border-base-border;
+
+  .link-text {
+    @apply ml-2 ;
+  }
+
+  .icon {
+    @apply text-base-border transition-all ease-in-out duration-300;
+  }
+
+  &:hover {
+    @apply cursor-pointer text-primary;
+    .icon {
+      @apply transition rotate-45 text-primary;
+    }
+  }
+}

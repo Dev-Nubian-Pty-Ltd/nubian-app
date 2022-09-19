@@ -1,0 +1,7 @@
+.title {
+  @apply uppercase inline-block w-full font-medium font-rubik text-primary-text mb-4;
+}
+
+.caption {
+  @apply block text-secondary-text capitalize;
+}

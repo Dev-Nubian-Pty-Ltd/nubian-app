@@ -1,0 +1,13 @@
+.avatar {
+  @apply mx-2;
+  .app-user-main {
+    @apply overflow-hidden relative w-8 h-8 bg-gray-100 rounded-full;
+  }
+  .avatar-image {
+    @apply p-1 w-8 h-8 rounded-full ring-2 ring-brand max-h-fit max-w-fit;
+  }
+
+  .no-avatar {
+    @apply absolute -left-1 w-10 h-10  ring-brand text-gray-400;
+  }
+}
