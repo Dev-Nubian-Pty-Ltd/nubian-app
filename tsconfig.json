@@ -24,7 +24,7 @@
       "@components/*": ["./src/components/*"]
     }
   },
-  "include": ["src/**/*", "**/*.ts", "**/*.tsx", "postcss.config.cjs", "**/*.test.ts", "jest.config.ts"],
+  "include": ["src/**/*", "**/*.ts", "**/*.tsx", "postcss.config.js", "**/*.test.ts", "jest.config.ts"],
   "exclude": ["node_modules", "./dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

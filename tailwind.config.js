@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+	content: ['./src/**/*.{html,js, jsx}'],
 	theme: {
 		extend: {
 			variants: {
@@ -19,7 +19,7 @@ module.exports = {
 			},
 			colors: {
 				'secondary-text': 'rgb(98, 110, 153)',
-				'primary-text': 'rgba(9, 14, 36,0775)',
+				'primary-text': 'rgb(136, 136, 136)',
 				brand: {
 					DEFAULT: '#6DD4A3',
 					dark: '#679C81',
@@ -27,7 +27,7 @@ module.exports = {
 					light: '#EEFDF4',
 				},
 				base: {
-					DEFAULT: 'rgb(250, 251, 252)',
+					DEFAULT: 'rgb(247 248 252)',
 					dark: '#090e24',
 					light: 'rgba(232,235,255,1)',
 					border: 'rgb(208, 212, 224)',
