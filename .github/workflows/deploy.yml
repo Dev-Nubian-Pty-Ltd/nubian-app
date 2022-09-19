@@ -38,7 +38,7 @@ jobs:
         run: npm install -g typescript
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      -name: Run test suite
+      - name: Run test suite
         run: yarn test
       - name: Build react application
         run: ${{ steps.detect-package-manager.outputs.runner }} build
