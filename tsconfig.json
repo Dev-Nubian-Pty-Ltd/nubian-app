@@ -5,24 +5,26 @@
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": false,
     "module": "ESNext",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "jsx": "react-jsx",
     "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
     "baseUrl": "./src",
     "incremental": true,
+    "types": ["@types/jest", "jest", "node"],
     "paths": {
       "@root/*": ["./src/*"],
       "@components/*": ["./src/components/*"]
     }
   },
-  "include": ["scr", "**/*.ts", "**/*.tsx", "postcss.config.cjs"],
-  "exclude": ["node_modules", "**/*.test.ts", "./dist"],
+  "include": ["src/**/*", "**/*.ts", "**/*.tsx", "postcss.config.cjs", "**/*.test.ts", "jest.config.ts"],
+  "exclude": ["node_modules", "./dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
