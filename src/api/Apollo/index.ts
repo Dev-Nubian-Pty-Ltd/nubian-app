@@ -1,6 +1,6 @@
 import { ApolloClient, ApolloLink, HttpLink, InMemoryCache, NormalizedCacheObject, split } from '@apollo/client';
-import { getMainDefinition } from '@apollo/client/utilities';
 import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
+import { getMainDefinition } from '@apollo/client/utilities';
 import { createClient } from 'graphql-ws';
 
 let apolloClient: ApolloClient<NormalizedCacheObject>;
@@ -52,7 +52,9 @@ const init = (options: { getUrl: string }) => {
 	return apolloClient;
 };
 
-export const apollo = {
-	get,
+const apollo = {
 	init,
+	get,
 };
+
+export { apollo };

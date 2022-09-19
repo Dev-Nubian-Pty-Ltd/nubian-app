@@ -12,7 +12,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.cjs', 'tailwind.config.js', 'postcss.config.js'],
+  ignorePatterns: ['.eslintrc.cjs', 'tailwind.config.cjs', 'postcss.config.cjs'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],

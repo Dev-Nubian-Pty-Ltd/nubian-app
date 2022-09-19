@@ -15,4 +15,4 @@ const App: React.FC = () => {
   return <SessionManager authenticated={authenticated} />;
 };
 
-export default App;
+export { App };
