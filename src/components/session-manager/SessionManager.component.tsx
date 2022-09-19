@@ -1,5 +1,17 @@
 import React from 'react';
+import ApplicationLayout from '../../components/layouts/application/Application.layout';
+import BaseLayout from '../../components/layouts/base/Base.layout';
 
-export const SessionManager: React.FC = () => {
-  return <div>SessionManager</div>;
+interface SessionProps {
+  authenticated: boolean | undefined;
+}
+export const SessionManager: React.FC<SessionProps> = ({ authenticated }) => {
+  return (
+    <div>
+      {authenticated && <ApplicationLayout />}
+      {!authenticated && <BaseLayout />}
+    </div>
+  );
 };
+
+export default SessionManager;
