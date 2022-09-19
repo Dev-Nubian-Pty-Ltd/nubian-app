@@ -36,10 +36,8 @@ jobs:
         run: npm install -g yarn
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Static HTML export with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      - name: Build react application
+        run: ${{ steps.detect-package-manager.outputs.runner }} typescript build build
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
