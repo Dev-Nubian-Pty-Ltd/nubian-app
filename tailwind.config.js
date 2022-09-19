@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{html,js, jsx}'],
+	content: ['./src/**/*.{html, js, jsx, ts, tsx}'],
 	theme: {
 		extend: {
 			variants: {
@@ -26,7 +26,7 @@ module.exports = {
 					light: '#D9EDDF',
 					light: '#EEFDF4',
 				},
-				"base-primary": {
+				'base-primary': {
 					DEFAULT: 'rgb(247 248 252)',
 					dark: '#090e24',
 					light: 'rgba(232,235,255,1)',
