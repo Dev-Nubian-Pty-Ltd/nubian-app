@@ -21,6 +21,7 @@
     "types": ["@types/jest", "jest", "node", "reflect-metadata"],
     "paths": {
       "@root/*": ["./*"],
+      "@api/*": ["./api/*"],
       "@components/*": ["./components/*"],
       "@pages/*": ["./pages/*"],
       "@utils/*": ["./utils/*"]
