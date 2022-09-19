@@ -4,4 +4,4 @@ const BaseLayout: React.FC = () => {
   return <div className={styles['base-layout']}>BaseLayout</div>;
 };
 
-export default BaseLayout;
+export { BaseLayout };

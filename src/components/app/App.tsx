@@ -1,5 +1,5 @@
+import { SessionManager } from '@components/session-manager/SessionManager.component';
 import { useEffect, useState } from 'react';
-import { SessionManager } from '../session-manager/SessionManager.component';
 import './App.scss';
 
 const App: React.FC = () => {
