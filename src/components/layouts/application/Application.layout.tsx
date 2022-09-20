@@ -17,7 +17,7 @@ const ApplicationLayout: React.FC = () => {
 
   return (
     <div className={styles['application-layout']}>
-      <AppHeader toggleMenu={handleToggleMenu} />
+      <AppHeader toggleMenu={handleToggleMenu} showingMenu={showMenu} />
       <main>
         <SideNav showMenu={showMenu} />
         <div className={styles['application-content']}>
