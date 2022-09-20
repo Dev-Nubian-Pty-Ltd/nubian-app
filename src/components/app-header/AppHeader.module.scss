@@ -1,3 +1,22 @@
 .application-header {
-  @apply h-[50px];
+  @apply h-[50px] flex flex-row items-center;
+
+  .header-brand {
+    @apply w-[275px] flex flex-row items-center px-4 py-2 gap-2;
+
+    .icon {
+      @apply transition-all ease-in-out duration-100;
+
+      &:hover {
+        @apply text-primary;
+      }
+    }
+  }
+
+  .header-middle {
+    @apply flex-1 h-full leading-[50px] bg-indigo-200;
+  }
+  .header-user-section {
+    @apply h-full border-l border-base-primary-border min-w-[275px] leading-[50px] bg-violet-200;
+  }
 }
