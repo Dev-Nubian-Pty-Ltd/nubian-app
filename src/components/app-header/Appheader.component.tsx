@@ -1,7 +1,7 @@
 import { ButtonLink } from '@components/shared/button-link/ButtonLink.component';
 import { Title } from '@components/shared/title/Title.component';
 import { Bars3BottomLeftIcon, ChevronDoubleLeftIcon } from '@heroicons/react/24/outline';
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './AppHeader.module.scss';
 
 interface AppheaderProps {
@@ -9,9 +9,6 @@ interface AppheaderProps {
   showingMenu: boolean;
 }
 const AppHeader: React.FC<AppheaderProps> = ({ toggleMenu, showingMenu }) => {
-  useEffect(() => {
-    console.log(showingMenu);
-  }, [showingMenu]);
   return (
     <div className={styles['application-header']}>
       <div className={styles['header-brand']}>
