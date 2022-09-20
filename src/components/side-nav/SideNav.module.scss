@@ -1,11 +1,10 @@
 .side-nav {
-  @apply min-w-[275px] h-full bg-green-100;
+  @apply w-[275px] h-full bg-yellow-100 overflow-hidden;
 
   &.open {
-    @apply bg-slate-100;
+    @apply animate-slide-left;
   }
-
   &.hidden {
-    @apply bg-yellow-100;
+    @apply animate-slide-right;
   }
 }
