@@ -1,18 +1,19 @@
-import { PlusIcon } from '@heroicons/react/24/outline';
 import React from 'react';
-import classes from './Button-link.module.scss';
+import styles from './Button-link.module.scss';
 
 interface ButtonLink {
   callback?: any;
   linkText?: string;
+  icon?: JSX.Element;
 }
-const ButtonLink: React.FC<ButtonLink> = ({ callback, linkText }) => {
+const ButtonLink: React.FC<ButtonLink> = ({ callback, linkText, icon }) => {
+  const buttonType = linkText ? '' : 'btn-icon';
   return (
-    <a className={classes['button-link']} onClick={callback}>
-      <PlusIcon className={`icon ${classes['icon']}`} />
-      {linkText && <span className={classes['link-text']}>{linkText}</span>}
+    <a className={`${styles['button-link']} ${styles[buttonType]}`} onClick={callback}>
+      {icon && icon}
+      {linkText && <span className={styles['link-text']}>{linkText}</span>}
     </a>
   );
 };
 
-export default ButtonLink;
+export { ButtonLink };
