@@ -20,3 +20,10 @@ body,
 .session-manager {
   @apply h-full w-full;
 }
+
+svg.icon {
+  @apply block w-full h-full text-slate-500;
+  &:hover {
+    @apply cursor-pointer text-primary;
+  }
+}
