@@ -3,10 +3,10 @@
 
   main {
     @apply flex-1 overflow-hidden overflow-y-scroll;
-    @apply flex flex-row w-full bg-pink-100;
+    @apply flex flex-row w-full;
 
     .application-content {
-      @apply flex-1;
+      @apply flex-1 bg-white rounded-lg overflow-hidden;
     }
   }
 }
