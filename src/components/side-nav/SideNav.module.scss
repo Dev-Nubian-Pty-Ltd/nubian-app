@@ -8,6 +8,10 @@
     @apply animate-slide-right;
   }
 
+  .side-nav-header {
+    @apply h-[51px] mb-2 flex flex-row items-center px-2 py-4 border-b border-base-primary-lightest;
+  }
+
   .side-nav-body {
     @apply p-2 flex-1;
 
@@ -18,13 +22,13 @@
       &.active {
         @apply text-primary bg-base-primary-light;
         .icon-wrapper {
-          @apply bg-base-primary border border-base-primary-border;
+          @apply bg-base-primary border border-base-primary-lightest;
         }
       }
       &:hover {
         @apply bg-base-primary-lightest;
         .icon-wrapper {
-          @apply bg-base-primary border border-base-primary-border;
+          @apply bg-base-primary border border-base-primary-lightest;
         }
       }
     }

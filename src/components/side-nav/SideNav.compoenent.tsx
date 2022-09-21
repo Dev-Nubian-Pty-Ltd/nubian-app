@@ -10,6 +10,7 @@ const SideNav: React.FC<SideNavProps> = ({ showMenu }) => {
   const toggleClass = showMenu ? 'open' : 'hidden';
   return (
     <aside className={`${styles['side-nav']} ${styles[toggleClass]}`}>
+      <div className={styles['side-nav-header']}>header</div>
       <div className={styles['side-nav-body']}>
         <nav>
           <NavLink to="" className={({ isActive }) => (isActive ? styles['active'] : undefined)} end>
