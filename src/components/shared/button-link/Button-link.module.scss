@@ -1,12 +1,12 @@
 .button-link {
-  @apply transition-all uppercase ease-in-out duration-100 rounded-sm overflow-hidden;
+  @apply transition-all uppercase ease-in-out duration-300 rounded-sm overflow-hidden;
   @apply appearance-none relative inline-flex items-center text-center justify-center;
   @apply align-middle select-none self-center text-sm rounded-md leading-10;
-  @apply px-5 w-auto h-10 text-base-primary-border bg-base-primary font-medium;
+  @apply px-5 w-auto h-10 text-base-primary-border  font-medium;
   @apply border-2 border-dashed border-base-primary-border;
 
   &.btn-icon {
-    @apply h-8 w-8 rounded-sm border p-1 border-slate-300;
+    @apply h-8 w-8 rounded-sm border-0 p-1;
   }
   .link-text {
     @apply ml-2;
@@ -20,7 +20,7 @@
     @apply cursor-pointer text-primary;
 
     &.btn-icon {
-      @apply bg-slate-100;
+      @apply bg-primary-light;
     }
     .icon {
       @apply transition rotate-45 text-primary;
