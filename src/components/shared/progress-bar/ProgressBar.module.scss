@@ -1,0 +1,23 @@
+.progress-container {
+  @apply pb-4 pt-1 rounded-sm;
+}
+
+.progress-bar {
+  @apply h-1.5 w-full bg-base-primary border border-base-primary-border rounded;
+  @apply relative overflow-hidden;
+}
+
+.progress-indicator {
+  --width: 0%;
+  width: var(--width);
+  @apply bg-primary absolute left-0 top-0 bottom-0;
+  @apply will-change-auto;
+}
+.progress-description {
+  @apply flex flex-row mb-1 capitalize text-primary;
+  @apply justify-between;
+}
+
+.progress-description span:last-child {
+  @apply font-bold;
+}
