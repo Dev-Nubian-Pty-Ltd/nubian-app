@@ -1,0 +1,26 @@
+.file-upload-wrapper {
+  @apply h-auto w-auto my-2;
+}
+
+.file-upload-btn {
+  @apply capitalize ease-in-out duration-300 mb-2;
+  @apply appearance-none relative inline-flex items-center text-center justify-center;
+  @apply align-middle self-center text-sm rounded-md leading-[16px];
+  @apply p-5 w-full h-8 text-secondary-text bg-base font-medium;
+  @apply before:absolute before:inset-0 before:border-2 before:border-dashed before:rounded-sm content-[''];
+  @apply hover:text-primary cursor-pointer hover:shadow-sm;
+}
+
+.upload-icon {
+  @apply h-4 w-4 mr-2;
+}
+
+.complete-indicator {
+  @apply appearance-none relative inline-flex items-center text-center justify-center;
+  @apply align-middle self-center text-sm rounded-md leading-[16px];
+  @apply p-5 w-full h-8 text-success-dark font-medium;
+}
+
+.complete-icon {
+  @apply h-8 w-8;
+}
