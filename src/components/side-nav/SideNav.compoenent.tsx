@@ -13,19 +13,32 @@ const SideNav: React.FC<SideNavProps> = ({ showMenu }) => {
       <div className={styles['side-nav-header']}>header</div>
       <div className={styles['side-nav-body']}>
         <nav>
-          <NavLink to="" className={({ isActive }) => (isActive ? styles['active'] : undefined)} end>
+          <NavLink
+            to=""
+            className={({ isActive }) => (isActive ? styles['active'] : undefined)}
+            state={{ path: '' }}
+            end
+          >
             <span className={styles['icon-wrapper']}>
               <ChartPieIcon className={`icon ${styles['icon']}`} />
             </span>
             <span>Dashboard</span>
           </NavLink>
-          <NavLink to="/projects" className={({ isActive }) => (isActive ? styles['active'] : undefined)}>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? styles['active'] : undefined)}
+            state={{ path: '/projects' }}
+          >
             <span className={styles['icon-wrapper']}>
               <ChartBarSquareIcon className={`icon ${styles['icon']}`} />
             </span>
             <span>Projects</span>
           </NavLink>
-          <NavLink to="/crm" className={({ isActive }) => (isActive ? styles['active'] : undefined)}>
+          <NavLink
+            to="/crm"
+            className={({ isActive }) => (isActive ? styles['active'] : undefined)}
+            state={{ path: '/crm' }}
+          >
             <span className={styles['icon-wrapper']}>
               <ShoppingCartIcon className={`icon ${styles['icon']}`} />
             </span>
