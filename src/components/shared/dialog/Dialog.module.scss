@@ -1,0 +1,27 @@
+.dialog {
+  @apply absolute -top-[8px] -left-[8px] -right-[8px] -bottom-[8px] bg-dialog-bg;
+  @apply flex flex-col justify-center items-center origin-center;
+  @apply transition-all ease-in-out duration-500;
+}
+
+.dialog-wrapper {
+  @apply min-h-[275px] min-w-[275px] bg-white overflow-y-scroll;
+  @apply border border-gray-200 rounded-md shadow-xl flex flex-col;
+}
+
+.dialog-header {
+  @apply px-3 pt-3 border-b border-gray-200 flex flex-row;
+  @apply justify-between;
+}
+.close-dialog {
+  @apply transition-all ease-in-out duration-300;
+  @apply h-5 w-5 bg-gray-200 rounded-sm;
+  @apply hover:bg-danger-light hover:text-danger-dark hover:rotate-90;
+}
+.icon {
+  @apply h-5 w-5  select-none;
+  @apply transition-all ease-in-out duration-300;
+}
+.dialog-body {
+  @apply px-3 pb-3;
+}
