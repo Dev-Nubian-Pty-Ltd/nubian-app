@@ -1,3 +1,4 @@
+import { LandingPage } from '@root/pages/landing/Landing.page';
 import { NotFound } from '@root/pages/not-found/NotFound.page';
 import { SessionsPage } from '@root/pages/sessions/Sessions.page';
 import React from 'react';
@@ -8,7 +9,8 @@ const BaseLayout: React.FC = () => {
     <div className={styles['base-layout']}>
       <Routes>
         <Route path="/*" element={<NotFound />}></Route>
-        <Route index element={<SessionsPage />}></Route>
+        <Route index element={<LandingPage />}></Route>
+        <Route path="/sessions" element={<SessionsPage />}></Route>
       </Routes>
     </div>
   );
