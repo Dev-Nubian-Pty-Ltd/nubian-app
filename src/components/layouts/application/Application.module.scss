@@ -1,12 +1,11 @@
 .application-layout {
   @apply h-full w-full flex flex-col;
-
   main {
     @apply flex-1 overflow-hidden overflow-y-scroll;
     @apply flex flex-row w-full;
-
     .application-content {
       @apply flex-1 bg-white rounded-lg overflow-hidden;
+      @apply mb-2 mx-2 border border-base-primary-light;
     }
   }
 }

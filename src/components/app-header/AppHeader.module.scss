@@ -1,12 +1,9 @@
 .application-header {
   @apply h-[50px] flex flex-row items-center;
-
   .header-brand {
     @apply w-[275px] flex flex-row items-center px-2 py-2 gap-2;
-
     .icon {
       @apply transition-all ease-in-out duration-100;
-
       &:hover {
         @apply text-primary;
       }
@@ -14,7 +11,7 @@
   }
 
   .header-middle {
-    @apply flex-1 h-full leading-[50px];
+    @apply flex-1 h-full leading-[50px] mx-2;
   }
   .header-user-section {
     @apply h-full min-w-[275px] leading-[50px];

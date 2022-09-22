@@ -4,7 +4,6 @@
 * {
   @apply box-border select-none;
 }
-
 html,
 body,
 #root {
@@ -16,14 +15,9 @@ body,
   -webkit-text-size-adjust: 100%;
   @apply h-[100vh] bg-base-primary text-secondary-text leading-6 font-normal font-avenir text-base;
 }
-
 .session-manager {
   @apply h-full w-full;
 }
-
 svg.icon {
   @apply block w-full h-full text-slate-500;
-  &:hover {
-    @apply cursor-pointer text-primary;
-  }
 }
