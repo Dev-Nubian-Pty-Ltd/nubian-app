@@ -1,4 +1,4 @@
-import { ChannelsService, MessagesService } from '@api/graphql';
+import { ChannelsResolver, MessagesResolver } from '@api/graphql';
 import { ApolloError } from '@apollo/client';
 import { User } from '@root/stores/users/user.store';
 import { makeAutoObservable } from 'mobx';
@@ -38,50 +38,22 @@ export class MessageStore {
 	channels: Channel[] = [];
 	loading = false;
 	error: ApolloError | null = null;
-	messageService: typeof MessagesService;
-	channelsService: typeof ChannelsService;
+	messagesResolver: typeof MessagesResolver;
+	channelsResolver: typeof ChannelsResolver;
 
-	constructor(messageService: typeof MessagesService, channelsService: typeof ChannelsService) {
+	constructor(messagesResolver: typeof MessagesResolver, channelsResolver: typeof ChannelsResolver) {
 		makeAutoObservable(this);
 		makePersistable(this, {
 			name: 'MessageStore',
-			properties: ['channels', 'messages', 'loading', 'channelsService', 'messageService'],
+			properties: ['channels', 'messages', 'loading', 'channelsResolver', 'messagesResolver'],
 			storage: typeof window !== 'undefined' ? localStorage : undefined,
 			expireIn: 86400000,
 			removeOnExpiration: true,
 			stringify: true,
 			debugMode: false,
 		});
-		this.messageService = messageService;
-		this.channelsService = channelsService;
-	}
-
-	async createChannel(createChannelRequest: any, callback: any = {}) {
-		const [createChannel] = callback;
-		const { data, error, loading } = await createChannel({
-			variables: {
-				...createChannelRequest,
-			},
-		});
-		if (error) this.setError(error);
-		if (loading) this.setLoading(loading);
-		if (data) {
-			this.setChannel(data.createChannel);
-		}
-	}
-
-	async sendMessage(createMessageInput: CreateMessageInput, callback: any = {}) {
-		const [createMessage] = callback;
-		const { data, error, loading } = await createMessage({
-			variables: {
-				...createMessageInput,
-			},
-		});
-		if (error) this.setError(error);
-		if (loading) this.setLoading(loading);
-		if (data) {
-			this.addMessage(data.createMessage);
-		}
+		this.messagesResolver = messagesResolver;
+		this.channelsResolver = channelsResolver;
 	}
 
 	get isHydrated() {
