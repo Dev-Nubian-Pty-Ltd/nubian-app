@@ -1,5 +1,4 @@
-export { default as AuthService } from '@api/graphql/services/auth.service';
-export { default as ChannelsService } from '@api/graphql/services/channels.service';
-export { default as MessagesService } from '@api/graphql/services/messages.service';
-export { default as SignatureService } from '@api/graphql/services/signature.service';
-export { default as UserService } from '@api/graphql/services/user.service';
+export { default as SessionsResolver } from '@root/api/graphql/resolvers/sessions.resolver';
+export { default as ChannelsResolver } from '@root/api/graphql/resolvers/channels.resolver';
+export { default as MessagesResolver } from '@root/api/graphql/resolvers/messages.resolver';
+export { default as SignatureResolver } from '@root/api/graphql/resolvers/signature.resolver';
