@@ -1,20 +1,20 @@
-import { AuthService, ChannelsService, MessagesService, UserService } from '@api/graphql';
-import { AuthStore } from '@root/stores/auth/auth.store';
+import { SessionsResolver, ChannelsResolver, MessagesResolver } from '@api/graphql';
 import { MessageStore } from '@root/stores/messages/messagesStore';
+import { SessionsStore } from '@root/stores/sessions/sessions.store';
 import { UserStore } from '@root/stores/users/user.store';
 import React from 'react';
 
 interface IStoreContext {
-	authStore: AuthStore;
+	sessionStore: SessionsStore;
 	userStore: UserStore;
 	messageStore: MessageStore;
 }
-const authStore = new AuthStore(AuthService);
-const userStore = new UserStore(UserService);
-const messageStore = new MessageStore(MessagesService, ChannelsService);
+const sessionStore = new SessionsStore(SessionsResolver);
+const userStore = new UserStore(SessionsResolver);
+const messageStore = new MessageStore(MessagesResolver, ChannelsResolver);
 
 export const StoreContext = React.createContext<IStoreContext>({
-	authStore,
+	sessionStore,
 	userStore,
 	messageStore,
 });
