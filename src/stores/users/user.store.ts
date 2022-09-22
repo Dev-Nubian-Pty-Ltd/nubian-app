@@ -1,7 +1,8 @@
-import { UserService } from '@api/graphql';
+import { SessionsResolver } from '@api/graphql';
 import { ApolloError } from '@apollo/client';
 import { makeAutoObservable } from 'mobx';
 import { clearPersistedStore, getPersistedStore, isHydrated, isPersisting, makePersistable } from 'mobx-persist-store';
+
 export interface Account {
 	id: string;
 	company: string;
@@ -19,29 +20,25 @@ export interface User {
 	updatedAt: string;
 	account: Account;
 }
-
-export interface SignedInRequest {
-	me: boolean;
-}
 export class UserStore {
 	user: User | null = null;
 	account: Account | null = null;
 	error: ApolloError | any = null;
 	loading = false;
-	service: typeof UserService;
+	resolver: typeof SessionsResolver;
 
-	constructor(userService: typeof UserService) {
+	constructor(sessionResolver: typeof SessionsResolver) {
 		makeAutoObservable(this);
 		makePersistable(this, {
 			name: 'UserStore',
-			properties: ['user', 'error', 'loading', 'service', 'account'],
+			properties: ['user', 'error', 'loading', 'resolver', 'account'],
 			storage: typeof window !== 'undefined' ? localStorage : undefined,
 			expireIn: 86400000,
 			removeOnExpiration: true,
 			stringify: true,
 			debugMode: false,
 		});
-		this.service = userService;
+		this.resolver = sessionResolver;
 	}
 
 	get isHydrated(): boolean {
@@ -58,27 +55,6 @@ export class UserStore {
 
 	isError() {
 		return this.error;
-	}
-
-	async signedin(signedinRequest: SignedInRequest, query: any = {}) {
-		const [userSession] = query;
-		const { data, error, loading } = await userSession({
-			variables: { ...signedinRequest },
-		});
-
-		if (loading) this.setLoading(loading);
-		if (error) this.setError(error);
-		if (data) {
-			const { userSession } = data;
-			if (userSession && userSession.user) this.setUser(userSession.user);
-			this.setError({ message: 'Unauthorized', status: 401 });
-		}
-
-		return {
-			loading,
-			error,
-			user: this.user,
-		};
 	}
 
 	async getUser() {
