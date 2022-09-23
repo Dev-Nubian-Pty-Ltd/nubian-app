@@ -8,10 +8,10 @@
 }
 .right {
   @apply grid grid-flow-row content-around col-span-3 bg-white;
-  @apply relative min-w-[340px];
+  @apply relative min-w-[340px] flex flex-col items-center justify-center;
 
   .session-wrapper {
-    @apply absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2;
-    @apply min-w-[340px] h-auto;
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    @apply min-w-[340px] min-h-[200px];
   }
 }
