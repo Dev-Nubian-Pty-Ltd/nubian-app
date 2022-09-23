@@ -52,7 +52,7 @@ const SIGN_IN: DocumentNode = gql`
 		createSession(email: $email, password: $password) {
 			token
 			userId
-			createAt
+			createdAt
 			user {
 				id
 				email
