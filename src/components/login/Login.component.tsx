@@ -1,33 +1,37 @@
 import { FormDataSet, getFormStructure } from '@utils/providers/formData';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { validateEmail } from '@utils/helpers/validate_email.helper';
 import { validateCredentials } from '@utils/helpers/validate_signinCreds.helper';
 
 import { Button } from '@components/shared/button/Button.component';
-import { SignInRequest } from '@root/api/services/sessions.service';
+import { RepositoryContext } from '@root/api/repository/Repository.context';
+import { LoginRequestInput } from '@root/api/services/sessions/dto/sessions/sessions.dto';
+import { LoginInput } from '@root/hooks/sessionReducer';
 import styles from './login.module.scss';
 
-const initialCredentials: SignInRequest = {
+const initialCredentials: LoginRequestInput = {
   email: undefined,
   password: undefined,
 };
 
 const Login: React.FC = () => {
+  const { sessionsDataStore } = useContext(RepositoryContext);
   const [inActionable, setActionable] = useState<boolean | undefined>(true);
-  const [credentials, setCredentials] = useState<SignInRequest>(initialCredentials);
+  const [credentials, setCredentials] = useState<LoginInput>(initialCredentials);
   const [formStructure, setFormStructure] = useState<FormDataSet[] | undefined>();
-
   const handleOnChange = (event: any) => {
     const target = event.target;
     const targetValue = target.value.trim().length === 0 ? undefined : target.value;
-    setCredentials((prevCreds) => ({ ...prevCreds, [target.name]: targetValue }));
+    setCredentials((prevCreds: LoginInput) => ({ ...prevCreds, [target.name]: targetValue }));
     const isValid = validateCredentials({ ...credentials }) && validateEmail(credentials.email) ? false : true;
     setActionable(isValid);
   };
 
   const handleOnSubmit = async (event: any) => {
     event.preventDefault();
+    const result = await sessionsDataStore.signIn(credentials);
+    console.log(result);
   };
 
   useEffect(() => {
