@@ -11,7 +11,7 @@
     @apply h-[51px] mb-2 flex flex-row items-center px-2 py-4 border-b border-base-primary-lightest;
   }
   .side-nav-body {
-    @apply p-2 flex-1 overflow-hidden;
+    @apply pl-2 py-2 flex-1 overflow-hidden;
     a {
       @apply flex flex-row gap-2;
       @apply mb-2 rounded-md h-9 items-center px-2;
