@@ -18,8 +18,8 @@ module.exports = {
 				bold: 600,
 			},
 			colors: {
-				'secondary-text': 'rgb(98, 110, 153)',
-				'primary-text': 'rgb(136, 136, 136)',
+				'primary-text': 'rgb(98, 110, 153)',
+				'secondary-text': 'rgb(136, 136, 136)',
 				'base-primary': {
 					DEFAULT: 'rgb(248, 249, 251)',
 					dark: '#090e24',
