@@ -1,14 +1,17 @@
+import { Avatar } from '@components/shared/avatar/Avatar.component';
 import { ButtonLink } from '@components/shared/button-link/ButtonLink.component';
 import { Title } from '@components/shared/title/Title.component';
 import { Bars3BottomLeftIcon, ChevronDoubleLeftIcon } from '@heroicons/react/24/solid';
+import { User } from '@root/api/repository/sessions/SessionsData.store';
 import React, { useEffect, useState } from 'react';
 import styles from './AppHeader.module.scss';
 
 interface AppheaderProps {
   toggleMenu: any;
   showingMenu: boolean;
+  user: User;
 }
-const AppHeader: React.FC<AppheaderProps> = ({ toggleMenu, showingMenu }) => {
+const AppHeader: React.FC<AppheaderProps> = ({ toggleMenu, showingMenu, user }) => {
   const [order, setOrder] = useState<{ [key: string]: string } | null>({
     first: '1',
     second: '2',
@@ -39,10 +42,13 @@ const AppHeader: React.FC<AppheaderProps> = ({ toggleMenu, showingMenu }) => {
           callback={toggleMenu}
           icon={showingMenu ? <Bars3BottomLeftIcon className="icon" /> : <ChevronDoubleLeftIcon className="icon" />}
         />
-        <Title style={{ order: order?.second }} text="Nubian" />
+        <Title style={{ order: order?.second }} text={user.account.company} />
       </div>
       <div className={styles['header-middle']}>middle</div>
-      <div className={styles['header-user-section']}>user section</div>
+      <div className={styles['header-user-section']}>
+        <Avatar imageSrc={user.imageSrc} />
+        <span className={styles['user-name']}>{user.knownAs || user.fullName || user.email}</span>
+      </div>
     </div>
   );
 };
