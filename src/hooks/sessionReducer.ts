@@ -75,7 +75,7 @@ export interface AuthAction {
 	SUCCESS: string;
 }
 
-export const AUTH_ACTION: AuthAction = {
+export const SESSION_ACTION: AuthAction = {
 	LOADING: 'loading',
 	ERROR: 'error',
 	SUCCESS: 'success',
@@ -106,13 +106,13 @@ export const useSessionsReducer = (
 	action: LoginAction | LogoutAction | LoggedInAction | RegisterAction,
 ): SessionState | UserState | undefined => {
 	switch (action.type) {
-		case AUTH_ACTION.LOADING:
+		case SESSION_ACTION.LOADING:
 			return { ...state, loading: action.payload, error: undefined };
 
-		case AUTH_ACTION.ERROR:
+		case SESSION_ACTION.ERROR:
 			console.log('this is error', action.payload);
 			return { ...state, loading: false, error: action.payload.message };
-		case AUTH_ACTION.SUCCESS:
+		case SESSION_ACTION.SUCCESS:
 			if (Object.prototype.hasOwnProperty.call(action.payload, 'token'))
 				return { ...state, loading: false, error: undefined, session: action.payload };
 			if (Object.prototype.hasOwnProperty.call(action.payload, 'accountId'))
