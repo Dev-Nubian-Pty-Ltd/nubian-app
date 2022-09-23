@@ -1,1 +1,1 @@
-export { default as sessionService } from './sessions.service';
+export { default as SessionsService } from './sessions/Sessions.service';
