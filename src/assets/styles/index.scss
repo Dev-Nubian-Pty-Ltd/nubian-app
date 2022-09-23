@@ -7,13 +7,9 @@
 html,
 body,
 #root {
-  font-family: Inter, Helvetica, Arial, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  @apply h-[100vh] bg-base-primary text-secondary-text leading-6 font-normal font-avenir text-base;
+  @apply h-[100vh] w-[100vw] bg-base-primary text-primary-text;
+  @apply leading-6 font-normal font-inter text-base;
+  @apply antialiased max-w-[100vw];
 }
 .session-manager {
   @apply h-full w-full;
