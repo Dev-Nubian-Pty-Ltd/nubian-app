@@ -8,7 +8,7 @@ import styles from './AppHeader.module.scss';
 
 interface AppheaderProps {
   toggleMenu: any;
-  showingMenu: boolean;
+  showingMenu: boolean | undefined;
   user: User;
 }
 const AppHeader: React.FC<AppheaderProps> = ({ toggleMenu, showingMenu, user }) => {
@@ -44,10 +44,10 @@ const AppHeader: React.FC<AppheaderProps> = ({ toggleMenu, showingMenu, user }) 
         />
         <Title style={{ order: order?.second }} text={user.account.company} />
       </div>
-      <div className={styles['header-middle']}>middle</div>
+      <div className={styles['header-middle']}></div>
       <div className={styles['header-user-section']}>
         <Avatar imageSrc={user.imageSrc} />
-        <span className={styles['user-name']}>{user.knownAs || user.fullName || user.email}</span>
+        <span className={styles['user-name']}>{user.fullName || user.email}</span>
       </div>
     </div>
   );
