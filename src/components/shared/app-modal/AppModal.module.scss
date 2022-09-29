@@ -1,0 +1,36 @@
+.modal-container {
+  @apply fixed table h-full w-full top-0 left-0 scale-0 z-[1];
+
+  &.show {
+    @apply scale-100;
+    .modal-background {
+      @apply animate-fadeIn bg-modalBg;
+      .modal {
+        @apply animate-scaleUp opacity-0;
+      }
+    }
+    + .content {
+      @apply animate-scaleBack;
+    }
+    &.out {
+      @apply animate-quickScaleDown;
+      .modal-background {
+        @applu animate-fadeOut;
+        .modal {
+          @apply animate-scaleDown;
+        }
+      }
+      + .content {
+        @apply animate-scaleForward;
+      }
+    }
+  }
+
+  .modal-background {
+    @apply table-cell text-center align-middle bg-modalBgLight;
+
+    .modal {
+      @apply bg-white p-4 inline-block rounded-md font-normal relative h-auto min-w-[375px];
+    }
+  }
+}

@@ -4,8 +4,10 @@
     @apply flex-1 overflow-hidden overflow-y-scroll;
     @apply flex flex-row w-full;
     .application-content {
+      box-shadow: 0 4px 5px 0 rgba(93, 114, 140, 0.1), 0 1px 10px 0 rgba(93, 114, 140, 0.08),
+        0 2px 4px -1px rgba(93, 114, 140, 0.16);
       @apply flex-1 bg-white rounded-lg overflow-hidden;
-      @apply mb-2 mx-2 border border-base-primary-light;
+      @apply mb-2 mx-2 border border-primary-light p-2;
     }
   }
 }
