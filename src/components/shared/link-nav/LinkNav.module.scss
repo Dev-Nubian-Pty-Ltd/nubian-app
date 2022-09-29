@@ -1,0 +1,32 @@
+.link-nav {
+  .nav-link-item {
+    @apply duration-500 transition-all ease-in-out;
+    @apply flex flex-row gap-2 py-1;
+    @apply mb-2 rounded-md h-10 items-center px-2 capitalize;
+    .icon-wrapper {
+      @apply h-8 w-8 flex justify-center items-center rounded-md p-1;
+    }
+    .nav-icon {
+      @apply text-primary font-normal;
+    }
+    &.active {
+      @apply text-primary-dark bg-primary-light;
+      .icon-wrapper {
+        @apply bg-base-primary border border-primary-lightest;
+        .icon {
+          @apply text-primary-dark;
+        }
+      }
+    }
+
+    &:hover:not(.active) {
+      @apply bg-base-primary-light text-primary;
+      .icon-wrapper {
+        @apply bg-base-primary border border-primary-lightest;
+      }
+      .icon {
+        @apply text-primary;
+      }
+    }
+  }
+}

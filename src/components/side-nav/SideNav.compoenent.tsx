@@ -1,49 +1,23 @@
-import { ChartBarSquareIcon, ChartPieIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { LinkNav } from '../shared/link-nav/LinkNav.component';
 import styles from './SideNav.module.scss';
 
 interface SideNavProps {
-  showMenu: boolean;
+  showMenu: boolean | undefined;
 }
 const SideNav: React.FC<SideNavProps> = ({ showMenu }) => {
-  const toggleClass = showMenu ? 'open' : 'hidden';
+  const [navClass, setNavClass] = useState<string>('');
+
+  useEffect(() => {
+    showMenu == undefined ? '' : showMenu ? setNavClass('open') : setNavClass('closed');
+  }, [showMenu]);
+
   return (
-    <aside className={`${styles['side-nav']} ${styles[toggleClass]}`}>
+    <aside className={`${styles['side-nav']} ${styles[navClass]}`}>
       <div className={styles['side-nav-header']}>header</div>
       <div className={styles['side-nav-body']}>
         <nav>
-          <NavLink
-            to=""
-            className={({ isActive }) => (isActive ? styles['active'] : undefined)}
-            state={{ path: '' }}
-            end
-          >
-            <span className={styles['icon-wrapper']}>
-              <ChartPieIcon className={`icon ${styles['icon']}`} />
-            </span>
-            <span>Dashboard</span>
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className={({ isActive }) => (isActive ? styles['active'] : undefined)}
-            state={{ path: '/projects' }}
-          >
-            <span className={styles['icon-wrapper']}>
-              <ChartBarSquareIcon className={`icon ${styles['icon']}`} />
-            </span>
-            <span>Projects</span>
-          </NavLink>
-          <NavLink
-            to="/crm"
-            className={({ isActive }) => (isActive ? styles['active'] : undefined)}
-            state={{ path: '/crm' }}
-          >
-            <span className={styles['icon-wrapper']}>
-              <ShoppingCartIcon className={`icon ${styles['icon']}`} />
-            </span>
-            <span>CRM Management</span>
-          </NavLink>
+          <LinkNav />
         </nav>
       </div>
       <footer className={styles['side-nav-footer']}></footer>
