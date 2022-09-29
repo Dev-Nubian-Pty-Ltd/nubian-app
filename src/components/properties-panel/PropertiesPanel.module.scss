@@ -1,0 +1,24 @@
+.properties-panel {
+  @apply fixed bottom-2 right-2 top-[51px] min-w-[30%] border-l border-r border-primary-light flex flex-col;
+  @apply translate-x-[110%] bg-white rounded-tr-md rounded-br-md border-b;
+
+  .panel-header {
+    @apply h-[51px] border-b border-primary-light px-2;
+    @apply flex flex-row justify-between items-center;
+  }
+
+  .panel-body {
+    @apply flex-1 p-2;
+  }
+
+  .panel-footer {
+    @apply h-[51px] border-t border-primary-light p-2;
+  }
+
+  &.open {
+    @apply animate-slideFromRight;
+  }
+  &.close {
+    @apply animate-slideAwayFromRight;
+  }
+}
