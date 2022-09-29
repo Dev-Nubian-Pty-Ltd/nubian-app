@@ -1,0 +1,8 @@
+.action-panel {
+  @apply h-[51px] flex flex-row bg-white border-b border-primary-light p-2;
+  @apply items-center justify-between;
+
+  .action-panel-left {
+    @apply flex-1;
+  }
+}
