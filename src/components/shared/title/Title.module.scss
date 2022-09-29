@@ -1,7 +1,7 @@
 .title {
-  @apply uppercase w-full font-bold font-inter text-primary-text block;
+  @apply uppercase w-full font-bold font-inter text-primary text-sm block;
 }
 
 .caption {
-  @apply block text-secondary-text capitalize text-xs font-normal;
+  @apply block text-secondary capitalize text-xs font-normal;
 }

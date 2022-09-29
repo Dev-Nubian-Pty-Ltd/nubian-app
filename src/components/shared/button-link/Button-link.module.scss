@@ -6,7 +6,7 @@
   @apply border-2 border-dashed border-base-primary-border;
 
   &.btn-icon {
-    @apply h-8 w-8 rounded-sm border-0 p-1;
+    @apply h-8 w-8 rounded-md border-0 p-1;
   }
   .link-text {
     @apply ml-2;
