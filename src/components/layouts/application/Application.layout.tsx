@@ -1,6 +1,7 @@
 import { AppHeader } from '@components/app-header/Appheader.component';
 import { SideNav } from '@components/side-nav/SideNav.compoenent';
 import { User } from '@root/api/repository/sessions/SessionsData.store';
+import { ActionPanel } from '@root/components/action-panel/ActionPanel.coponents';
 import { PropertiesPanel } from '@root/components/properties-panel/PropertiesPanel.component';
 import AppModal from '@root/components/shared/app-modal/AppModal.component';
 import { CrmPage } from '@root/pages/crm/Crm.page';
@@ -29,6 +30,7 @@ const ApplicationLayout: React.FC<ApplicationProps> = ({ user }) => {
       <main>
         <SideNav showMenu={showMenu} />
         <div className={styles['application-content']}>
+          <ActionPanel />
           <Routes>
             <Route path="/*" element={<NotFound />}></Route>
             <Route index element={<DashboardPage />}></Route>
