@@ -6,11 +6,12 @@ interface ButtonLink {
   linkText?: string;
   icon?: JSX.Element;
   style?: any;
+  dataAction?: string;
 }
-const ButtonLink: React.FC<ButtonLink> = ({ callback, linkText, icon, style }) => {
+const ButtonLink: React.FC<ButtonLink> = ({ callback, linkText, icon, style, dataAction }) => {
   const buttonType = linkText ? '' : 'btn-icon';
   return (
-    <a className={`${styles['button-link']} ${styles[buttonType]}`} onClick={callback} style={style}>
+    <a className={`${styles['button-link']} ${styles[buttonType]}`} onClick={callback} style={style} data-action={dataAction}>
       {icon && icon}
       {linkText && <span className={styles['link-text']}>{linkText}</span>}
     </a>

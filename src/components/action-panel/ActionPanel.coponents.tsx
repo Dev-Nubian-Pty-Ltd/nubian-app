@@ -25,7 +25,8 @@ const ActionPanel: React.FC = () => {
       <div className="action-panel-actions">
         <ButtonLink
           callback={(event: React.MouseEvent<Element, MouseEvent>) => handleClick(event)}
-          icon={<AdjustmentsHorizontalIcon className="icon" data-action={'properties'} />}
+          icon={<AdjustmentsHorizontalIcon className="icon" />}
+          dataAction={'properties'}
         />
       </div>
     </div>
